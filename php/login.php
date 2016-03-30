@@ -1,11 +1,16 @@
-<!DOCTYPE html>
-<html>
+<?php
+session_start();
+if(isset($_SESSION['usuario'])){
 
-<head>
-<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<div class="head">
+header('Location : plantilla.php');
+
+
+}else{
+
+}
+  ?>
+
+<div class="header">
 		<p>Viva La Vida</p>
 	</div>
 
@@ -22,12 +27,3 @@
 
 		</form>
 	</div>
-
-
-</body>
-
-
-
-
-
-</html>
