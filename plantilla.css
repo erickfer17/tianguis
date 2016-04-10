@@ -18,7 +18,12 @@ border: 1px black solid;
 }
 
 
+#car{
 
+position: relative;
+
+
+}
 
 .header{
 	position: relative;

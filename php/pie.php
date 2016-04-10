@@ -1,6 +1,6 @@
 
 		<footer>
-		Tianguis Onlines
+		Tianguis Online
 		</footer>
 
 	</body>

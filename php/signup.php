@@ -1,9 +1,18 @@
 <!DOCTYPE html>
-<html>
 
-<?php include "php/head.php"
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>TIANGUIS ONLINE</title>
+		<link rel="stylesheet" type="text/css" href="/prueba/tianguis/plantilla.css">
 	
- ?>
+	</head>
+	<body>
+		
+		<div class="header">
+		
+		<img style="width: 15%; height: 80%; margin-top: 40px; margin-left: 20px" src="/prueba/tianguis/logo/2.png">
+		</div>
 
 	<div id="signup">
 		<form method="POST" action="" />
@@ -38,12 +47,14 @@
 			</fieldset>
 		</form>
 		<?php 
-		if(isset($_POST['submit'])){
-			require("php/registro.php");
+		
+		if(isset($_POST['registrar'])){
+
+			require("registro.php");
 		}
 
 
 		?>
 	</div>
 
-<?php include "php/pie.php" ?>
+<?php include "pie.php" ?>
