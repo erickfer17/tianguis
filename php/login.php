@@ -3,7 +3,7 @@
 session_start();
 if(isset($_SESSION['usuario'])){
 
-header('Location : /prueba/tianguis/plantilla.php');
+header('Location : ../plantilla.php');
 
 
 }else{
@@ -17,7 +17,7 @@ header('Location : /prueba/tianguis/plantilla.php');
 	<head>
 		<meta charset="UTF-8">
 		<title>TIANGUIS ONLINE</title>
-		<link rel="stylesheet" type="text/css" href="/prueba/tianguis/plantilla.css">
+		<link rel="stylesheet" type="text/css" href="../plantilla.css">
 		<!-- Core JavaScript/jQuery Plugins -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
@@ -29,7 +29,7 @@ header('Location : /prueba/tianguis/plantilla.php');
 		<div id="resultado"></div>
 		<div class="header">
 		
-		<img style="width: 15%; height: 80%; margin-top: 40px; margin-left: 20px" src="/prueba/tianguis/logo/2.png">
+		<img style="width: 15%; height: 80%; margin-top: 40px; margin-left: 20px" src="../logo/2.png">
 		</div>
 
 
@@ -52,43 +52,43 @@ header('Location : /prueba/tianguis/plantilla.php');
 
 
 				function Validar(){
-var user = document.getElementById('user').value;
-var pass = document.getElementById('pass').value;
+				var user = document.getElementById('user').value;
+				var pass = document.getElementById('pass').value;
            
-if(pass == "" || user == ""){
+			if(pass == "" || user == ""){
 
-	alert("ERROR: Campos vacios");
-}else{
-				$.ajax({
-					url: "validar.php",
-					type: "POST",
-					data: 'user='+user+'&pass='+pass,
-					success: function(resp){
-						if(resp== 1){
+				alert("ERROR: Campos vacios");
+			}else{
+							$.ajax({
+								url: "validar.php",
+								type: "POST",
+								data: 'user='+user+'&pass='+pass,
+								success: function(resp){
+									if(resp== 1){
 
-							<?php 
-						if (isset($_SESSION["usuario"])){
+										<?php 
+									if (isset($_SESSION["usuario"])){
 
-						header("Location: /prueba/tianguis/plantilla.php");
-						}
+									header("Location: ../plantilla.php");
+									}
 
-							?>
-						}
+										?>
+									}
 
-						if(resp!=1){
+									if(resp!=1){
 
 
-						alert("error");
+									alert("error");
 
-						}
-						//$('#resultado').html(resp);
+									}
+									//$('#resultado').html(resp);
 
-					}
+								}
 
-				});
-} //finaliza else
-				}
+							});
+			} //finaliza else
+							}
 
-			</script>
-		</form>
-	</div>
+						</script>
+					</form>
+				</div>
