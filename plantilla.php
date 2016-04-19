@@ -38,7 +38,7 @@ if(isset($_SESSION['usuario'])){
 
 			</fieldset>
 		</div>
-
+		<div id="submenu"></div>
 		<div>
 			<fieldset class="resientes">
 				<legend>RESIENTES</legend>
@@ -75,6 +75,7 @@ if(isset($_SESSION['usuario'])){
 
 			</fieldset>
 		</div>  
+		
 
 <?php include ("php/pie.php");
 	}

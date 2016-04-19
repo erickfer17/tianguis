@@ -1,7 +1,7 @@
 <?php  
 class validar
 {
-	 private $mysqli;
+	private $mysqli;
 	private $usu;
 	private $contra;
 	function __construct($usu,$contra,$mysqli)
