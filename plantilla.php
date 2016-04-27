@@ -8,6 +8,8 @@ if(!isset($_SESSION['contador'])){
 if(isset($_SESSION['usuario'])){
 
  include ("php/head.php"); 
+
+
 ?>
 
 
@@ -37,8 +39,25 @@ if(isset($_SESSION['usuario'])){
 				</ul>
 
 			</fieldset>
+			<fieldset style="border: solid 2px #00346e; border-radius: 10px">
+				
+				<legend>Cuenta</legend>
+				<ul>
+				<br>
+				<?php 
+				if($_SESSION['tipo']=="administrador"){
+				echo "<br><li><a href='php/usuarios.php'>Usuarios</a></li>";
+
+				}
+
+				 ?>
+					<li><a href="">Mis Productos</a></li>
+				<br
+				
+				</ul>
+			</fieldset>
 		</div>
-		<div id="submenu"></div>
+		
 		<div>
 			<fieldset class="resientes">
 				<legend>RESIENTES</legend>

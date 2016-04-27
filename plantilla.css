@@ -25,19 +25,6 @@ position: relative;
 
 }
 
-#submenu{
-  
- 	height: 400px;
-	width: 20%;
-	position: relative;
-	float: left;
-	font-size: 20px;
-	font-family: arial;
-	top: 300px;
-	position: absolute;
-	display: inline-block;
-}
-
 .header{
 	position: relative;
 	background:#009696;
@@ -93,7 +80,7 @@ background: #e5ddcd;
 .resientes{
 	margin-top: 30px;
 	margin-left: 21%;
-	
+	border-top: solid 2px #00346e; 
 	width: 77%;
 	display: inline-block;
 	position: relative;

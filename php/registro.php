@@ -11,6 +11,7 @@ $cp=$_POST['cp'];
 $estado=$_POST['estado'];
 $ciudad=$_POST['ciudad'];
 $rfc=$_POST['rfc'];
+$tipo="cliente";
 
 
 $reqlen = strlen($nick) * strlen($pass) * strlen($pass2) *  strlen($nombre)* strlen($apellidos) * strlen($email) * strlen($tel) * strlen($direccion) * strlen($cp) * strlen($estado) * strlen($ciudad);
@@ -20,7 +21,7 @@ if ($reqlen > 0) {
 	if($pass===$pass2){
 		require("conexion.php");
 		$pass=md5($pass);
-		mysql_query("INSERT into usuario VALUES('','$nombre','$apellidos','$email','$nick','$pass','$tel','$direccion','$cp','$estado','$ciudad','$rfc')");
+		mysql_query("INSERT into usuario VALUES('','$nombre','$apellidos','$email','$nick','$pass','$tel','$direccion','$cp','$estado','$ciudad','$rfc','$tipo')");
 		mysql_close($link);
 		echo "REGISTRO EXITOSO";
 		$nombre='';
@@ -35,7 +36,8 @@ if ($reqlen > 0) {
 		$estado='';
 		$ciudad='';
 		$rfc='';
-
+		$tipo='';
+	
 	} else{
 		echo "VERIFIQUE CONTRASEÑAS";
 

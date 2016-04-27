@@ -44,6 +44,9 @@ header('Location : ../plantilla.php');
 				<label>Password</label><br>
 				<input type=password id='pass' name="pass" placeholder="*******" required><br>
 				<button name="validar" onclick="Validar()">ENTRAR </BUTTON>
+				
+
+
 			</fieldset> 
 
 
