@@ -4,6 +4,42 @@ border: 1px black solid;
 }
 */
 
+
+button.accordion {
+    background-color: #eee;
+    
+    cursor: pointer;
+    padding: 3px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+   font-size: 20px;
+	font-family: arial;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    
+}
+
+div.panel {
+    padding: 0 22px;
+    display: none;
+    background-color: white;
+}
+
+div.panel.show {
+    display: block !important;
+}
+
+
+
+
+
+
+
+
 #signup{
 	margin-top: 100px;
 	font-size: 20px;
@@ -53,6 +89,8 @@ footer{
 	text-align: center;
 	clear:both;
 }
+
+
 
 
 #baner{

@@ -7,29 +7,18 @@ if (@!$_SESSION['usuario']) {
 ?>		
 <html lang="en">
 
-	<?php
-	include("cabecera.php");
-	?>
 
 
-  <!-- Navbar
-    ================================================== -->
-
-
-<!-- ======================================================================================================================== -->
-<div class="row">
-	
 	
 		
-	<div class="span12">
 
-		<div class="caption">
+
 		
-<!--///////////////////////////////////////////////////Empieza cuerpo del documento interno////////////////////////////////////////////-->
-		<h2> Administración de usuarios registrados</h2>	
-		<div class="well well-small">
-		<hr class="soft"/>
-		<h4>Edición de usuarios</h4>
+		
+<!--//////////////////////////////////////////////////////////////////////////////////////////////-->
+			
+		<div style="height: 300px" class="well well-small">
+		
 		<div class="row-fluid">
 		
 		<?php
@@ -91,9 +80,7 @@ if (@!$_SESSION['usuario']) {
 		
 
 
-		<!--EMPIEZA DESLIZABLE-->
 		
-		 <!--TERMINA DESLIZABLE-->
 
 
 
@@ -103,29 +90,6 @@ if (@!$_SESSION['usuario']) {
 
 		
 
-
-		
-
-<!--///////////////////////////////////////////////////Termina cuerpo del documento interno////////////////////////////////////////////-->
-</div>
-
-	</div>
-</div>
-<!-- Footer
-      ================================================== -->
-<hr class="soften"/>
-<footer class="footer">
-
-<hr class="soften"/>
-
- </footer>
-</div><!-- /container -->
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="bootstrap/js/jquery-1.8.3.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
 	</style>
   </body>
 </html>

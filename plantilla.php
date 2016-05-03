@@ -42,19 +42,40 @@ if(isset($_SESSION['usuario'])){
 			<fieldset style="border: solid 2px #00346e; border-radius: 10px">
 				
 				<legend>Cuenta</legend>
-				<ul>
-				<br>
 				<?php 
 				if($_SESSION['tipo']=="administrador"){
-				echo "<br><li><a href='php/usuarios.php'>Usuarios</a></li>";
+				
+				
+				echo 	"<button class='accordion'> <li><a href='php/usuarios.php'>Usuarios</a></li></button>";
+						
 
 				}
 
 				 ?>
-					<li><a href="">Mis Productos</a></li>
-				<br
 				
-				</ul>
+
+<button class="accordion"><li><a href='#'>Mis Productos</a></li></button>
+<div class="panel">
+  <ul>
+  	<li><a href="#">Compras</a></li>
+  	<br>
+  	<li><a href="#">Ventas</a></li>
+  </ul>
+</div>
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+  }
+}
+</script>
+			
 			</fieldset>
 		</div>
 		

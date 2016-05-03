@@ -65,7 +65,7 @@ class actualiza
 		public function actualizar(){
 
 			require("conexion.php");
-	$sentencia="update usuario set nombre='".$this->nombre."', apellidos='".$this->apellido."', email='".$this->correo."', usuario='".$this->usuario."',contrasena='".$this->contrasena."',telefono='".$this->telefono."', direccion='".$this->direccion."',cp='".$this->cp."',estado='".$this->estado."',ciudad='".$this->ciudad."',rfc='".$this->rfc."',tipo='".$this->tipo."' where id='".$this->id."'";
+	$sentencia="update usuario set nombre='".$this->nombre."', apellidos='".$this->apellido."', email='".$this->correo."', usuario='".$this->usuario."',contrasena='".md5($this->contrasena)."',telefono='".$this->telefono."', direccion='".$this->direccion."',cp='".$this->cp."',estado='".$this->estado."',ciudad='".$this->ciudad."',rfc='".$this->rfc."',tipo='".$this->tipo."' where id='".$this->id."'";
 	$resent=mysql_query($sentencia);
 	if ($resent==null) {
 		echo "Error de procesamieno no se han actuaizado los datos";
@@ -120,7 +120,7 @@ $row2 = mysqli_fetch_array($result2);
 
 if (mysqli_num_rows($result)>0) {
 	$_SESSION['tipo']=$row2['tipo'];
-
+	
 	$_SESSION['usuario'] = $this->usu;
 echo "1";	
 //header('Location: /prueba/tianguis/plantilla.php');

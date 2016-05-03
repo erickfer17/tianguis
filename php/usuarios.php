@@ -20,7 +20,7 @@ if ($_SESSION['usuario']) {
 	<div class="container">
 	  <div class="nav-collapse">
 		<ul class="nav">
-			<li class=""><a href="admin.php">ADMINISTRADOR DEL SITIO</a></li>
+			<li class=""><a href="#">ADMINISTRADOR DEL SITIO</a></li>
 			 
 	
 		</ul>
@@ -31,8 +31,8 @@ if ($_SESSION['usuario']) {
 	  </div><!-- /.nav-collapse -->
 	</div>
   </div><!-- /navbar-inner -->
-</div>
 
+</div>
 <!-- ======================================================================================================================== -->
 <div class="row">
 	
@@ -50,6 +50,23 @@ if ($_SESSION['usuario']) {
 		<div class="row-fluid">
 		
 
+
+					<!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">Close</button>
+                   
+                </div>
+                <div class="ct">
+              
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!---fin modal -->
 
 
 			<?php
@@ -98,7 +115,7 @@ if ($_SESSION['usuario']) {
 				    	echo "<td>$arreglo[12]</td>";
 				   
 
-				    	echo "<td><a href='actualizar.php?id=$arreglo[0]'><img src='../images/actualizar.gif' class='img-rounded'></td>";
+				    	echo "<td><a data-toggle='modal' data-target='#exampleModal' data-whatever=".$arreglo[0]."><img src='../images/actualizar.gif' class='img-rounded'></a></td>";
 						echo "<td><a href='usuarios.php?id=$arreglo[0]&idborrar=2'><img src='../images/eliminar.png' class='img-rounded'/></a></td>";
 						
 
@@ -113,8 +130,31 @@ if ($_SESSION['usuario']) {
 					$opera = new elimina(@$id,@$idborrar);
 					$opera->eliminar();
 
-
 			?>
+
+			    <script>
+    $('#exampleModal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) // Button that triggered the modal
+          var recipient = button.data('whatever') // Extract info from data-* attributes
+          var modal = $(this);
+          var dataString = 'id=' + recipient;
+            $.ajax({
+                type: "GET",
+                url: "actualizar.php",
+                data: dataString,
+                cache: false,
+                success: function (data) {
+                    console.log(data);
+                    modal.find('.ct').html(data);
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });  
+    })
+    </script>
+
+
 		<div class="span8">
 		
 		</div>	

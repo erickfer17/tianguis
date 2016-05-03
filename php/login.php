@@ -78,7 +78,7 @@ header('Location : ../plantilla.php');
 										?>
 									}
 
-									if(resp!=1){
+									if(resp==0){
 
 
 									alert("error");

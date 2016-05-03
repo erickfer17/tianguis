@@ -6,11 +6,11 @@
 		<meta charset="UTF-8">
 		<title>TIANGUIS ONLINE</title>
 		<link rel="stylesheet" type="text/css" href="/prueba/tianguis/plantilla.css">
-		<script type="text/javascript" src="/prueba/tianguis/js/jquery1.12.3.js"></script>
+		<script type="text/javascript" src="/prueba/tianguis/js/jquery-latest.min.js"></script>
 		<script type="text/javascript" src="/prueba/tianguis/js/carrito.js"></script>
-		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+		
 	
-   
+   <script type="text/javascript" src="/prueba/tianguis/bootstrap/js/bootstrap.min.js"/></script> 
     <link href="/prueba/tianguis/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
