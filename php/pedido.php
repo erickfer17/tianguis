@@ -1,4 +1,7 @@
-
+<?php 
+	session_start();
+ ?>
+<!--header-->
 <!DOCTYPE html>
 
 <html lang="es">
@@ -26,29 +29,8 @@
 		<div class="header">
 		<!--<a id ="join" href="php/logout.php">Cerra Sesión</a>-->
 		<a href="/prueba/tianguis/plantilla.php"><img style="width: 15%; height: 80%; margin-top: 40px; margin-left: 20px" src="/prueba/tianguis/logo/2.png"></a>
-		
-
-		<div class="buscador">
-	
-		<form name="search" method="post" action="/prueba/tianguis/php/busqueda.php?search=buscar" id="srch">
-			<input style="height: 30px; width: 300px" id="buscar" name="busca" type="text" id="busqueda">
-			<input id="imgbuscar" type=image src="/prueba/tianguis/images/buscar.png">
-
-		</form>
-
 		</div>
-
-		</div>
-
-
-
- 	<div id="car">
- 		<div id="carrito" style="background: white; color: black">
- 		carrito
- 		</div> 
- 		<a href="/prueba/tianguis/php/vaciar.php"><button>Vaciar carrito</button></a> 
- 			<a href="/prueba/tianguis/php/confirmar.php"><button>Confirmar Compra</button></a>
- 		</div>
+ 
  	 <div class="navbar">
   <div class="navbar-inner">
 	<div class="container">
@@ -63,3 +45,15 @@
 	</div>
   </div><!-- /navbar-inner -->
 </div>
+
+<!-----------------------------------fin header-------------------------------------->
+<div style="text-align: center;">
+	<h1>TU COMPRA HA SIDO CONFIRMADA</h1>
+<h4>Te hemos enviado un correo con los datos de la compra</h4>
+</div>
+
+
+ <?php 
+
+ include ("pie.php");
+ ?>

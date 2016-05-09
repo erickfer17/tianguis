@@ -35,9 +35,31 @@ div.panel.show {
 
 
 
+.buscador{
+	width:350px;
+	margin-left: -150px;
+	position: relative;
+	left: 50%;
+	text-align: center;
+	margin-top:-50px;
+}
 
+#imgbuscar{
+	background: white;
+	height: 30px;
+	width: 30px;
+	margin-left: -19px;
+	margin-top:-10px ;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
 
+#buscar{
+height: 30px;
+font-size: 20px;
+width: 300px;
 
+}
 
 
 #signup{
@@ -89,7 +111,6 @@ footer{
 	text-align: center;
 	clear:both;
 }
-
 
 
 

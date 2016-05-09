@@ -16,25 +16,26 @@ if(isset($_SESSION['usuario'])){
 
 
 <div class="category">
+
 			<fieldset style="border: solid 2px #00346e; border-radius: 10px">
 				<legend>Categorias</legend>
 				<ul>
 				<br>
-					<li><a href="">Animales y Mascotas</a></li>
+					<li><a href="/prueba/tianguis/php/busqueda.php?search=animales">Animales y Mascotas</a></li>
 					<br>
-					<li><a href="">Automoviles</a></li>
+					<li><a href="/prueba/tianguis/php/busqueda.php?search=autos">Automoviles</a></li>
 					<br>
-					<li><a href="">Belleza y Joyeria</a></li>
+					<li><a href="/prueba/tianguis/php/busqueda.php?search=belleza">Belleza y Joyeria</a></li>
 					<br>
-					<li><a href="">Electrodomesticos y Hogar</a></li>
+					<li><a href="/prueba/tianguis/php/busqueda.php?search=hogar">Electrodomesticos y Hogar</a></li>
 					<br>
-					<li><a href="">Herramientas</a></li>
+					<li><a href="/prueba/tianguis/php/busqueda.php?search=herramientas">Herramientas</a></li>
 					<br>
-					<li><a href="">Juguetes</a></li>
+					<li><a href="/prueba/tianguis/php/busqueda.php?search=juguetes">Juguetes</a></li>
 					<br>
-					<li><a href="">Musica e Instrumentos</a></li>
+					<li><a href="/prueba/tianguis/php/busqueda.php?search=musica">Musica e Instrumentos</a></li>
 					<br>
-					<li><a href="">Tecnologia</a></li>
+					<li><a href="/prueba/tianguis/php/busqueda.php?search=tecnologia">Tecnologia</a></li>
 					<br>
 				</ul>
 
@@ -59,7 +60,7 @@ if(isset($_SESSION['usuario'])){
   <ul>
   	<li><a href="#">Compras</a></li>
   	<br>
-  	<li><a href="#">Ventas</a></li>
+  	<li><a href="/prueba/tianguis/php/ventas.php">Ventas</a></li>
   </ul>
 </div>
 
@@ -86,8 +87,7 @@ for (i = 0; i < acc.length; i++) {
 				<?php 
 
  
-				$conexion = mysqli_connect("localhost","Erick","0217","tienda");
-				mysqli_set_charset($conexion, "utf8");
+				require("php/conn.php");
 				$peticion = "SELECT * FROM producto";
 				$resultado = mysqli_query($conexion, $peticion);
 				while($fila = mysqli_fetch_array($resultado)) {

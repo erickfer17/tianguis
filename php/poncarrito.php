@@ -4,7 +4,7 @@
 	$suma=0;
 	if (isset($_GET['p'])) {
 		$_SESSION['producto'][$_SESSION['contador']] = $_GET['p'];
-	echo $_SESSION['contador']++;
+	$_SESSION['contador']++;
 	
 	}
 

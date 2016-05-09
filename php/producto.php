@@ -2,7 +2,7 @@
 session_start();
 	include( "head.php");
 
-
+ 	
  	$conexion = mysqli_connect("localhost","Erick","0217","tienda");
 				mysqli_set_charset($conexion, "utf8");
 				$peticion = "SELECT * FROM producto WHERE id=".$_GET['id']." LIMIT 1";

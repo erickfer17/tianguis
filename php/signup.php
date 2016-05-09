@@ -51,6 +51,7 @@
 		if(isset($_POST['registrar'])){
 
 			require("registro.php");
+				echo	'<meta http-equiv="refresh" content="3; url=login.php">';
 		}
 
 
