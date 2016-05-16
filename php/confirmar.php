@@ -16,7 +16,17 @@ for($i=0; $i<$_SESSION['contador'];$i++){
 		
 		$peticion = "INSERT INTO lineaspedido VALUES('',".$_SESSION['idpedido'].",".$_SESSION['producto'][$i].",'1')";
 		$resultado = mysqli_query($conexion, $peticion);
-				
+
+		// RESTA EXISTENCIAS //
+
+		$peticion = "SELECT * FROM producto WHERE id='".$_SESSION['producto'][$i]."'" ;
+		$resultado = mysqli_query($conexion, $peticion);		
+		while($fila=mysqli_fetch_array($resultado)){
+	$existencias=$fila['existencias'];
+	$peticion2 = "UPDATE producto SET existencias='".($existencias - 1)."' WHERE id='".$_SESSION['producto'][$i]."'" ;
+		$resultado2 = mysqli_query($conexion, $peticion2);		
+}
+
 	}
 
 mysqli_close($conexion);

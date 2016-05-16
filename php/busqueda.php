@@ -4,16 +4,57 @@ session_start();
 include ("head.php");
 extract($_POST);
  				extract($_GET);
- 				
 
+ 				switch ($fil) {
+ 					case 1:
+ 						unset($_SESSION['categoria']);
+ 						break;
+ 					
+ 					case 0:
+ 						unset($_SESSION['busqueda']);
+ 						break;
+ 					default:
+ 						
+ 						break;
+ 				}
   ?>
 
+<div class="category">
+	
+ 	<div id="car">
+ 		<div id="carrito">
+ 		carrito
+ 		</div> 
+ 		<a href="/prueba/tianguis/php/vaciar.php"><button>Vaciar carrito</button></a> 
+ 			<a href="/prueba/tianguis/php/confirmar.php"><button>Confirmar Compra</button></a>
+ 		</div>
+</div>
 
-  <div class="category">
+<div class="category" style="margin-top: 150px">
 
-			<fieldset style="border: solid 2px #00346e; border-radius: 10px">
+<fieldset style="border: solid 2px #00346e; border-radius: 10px">
+
 				<legend>Filtros</legend>
-				<form name="filtrar" method="post" action="/prueba/tianguis/php/busqueda.php?search=filtro" id="srch">
+				<?php
+				switch ($fil) {
+					case 1:
+						echo"<form name='filtrar' method='post' action='/prueba/tianguis/php/busqueda.php?search=filtro&fil=1' id='srch'>";
+						break;
+					case 0:
+					echo"<form name='filtrar' method='post' action='/prueba/tianguis/php/busqueda.php?search=filtro&fil=0' id='srch'>";
+						break;
+					default:
+						
+						break;
+				}
+					
+				
+				
+					
+			
+
+				  ?>
+				
 				<label>Precio</label>
 
 			<input  name="precio" type="text" id="cost"><br>
@@ -21,10 +62,11 @@ extract($_POST);
 
 		</form>
 			
-			</fieldset>
+		</fieldset>
+		</div>
+ 
 
-</div>
-
+			
 
 			
 
@@ -36,13 +78,15 @@ extract($_POST);
 				<legend>RESIENTES</legend>
 				<br>
 				<?php 
+
+
 				
 				require("conn.php");
 				switch ($search) {
 					case 'buscar':
 							
 						$peticion = "SELECT * FROM producto WHERE nombre like'%".$busca."%' " ;
-						$_SESSION['producto']=$busca;
+						$_SESSION['busqueda']=$busca;
 						
 						break;
 					case 'animales':
@@ -89,31 +133,27 @@ extract($_POST);
 										break;
 
 										case 'tegnologia':
-											# code...
+										# code...
 										$peticion = "SELECT * FROM producto WHERE categoria ='Tecnologia' " ;
 
-											$_SESSION['categoria']='Tecnologia';										
-
-										
-
+										$_SESSION['categoria']='Tecnologia';										
+									
 											break;
 
-											echo $_SESSION['producto'];
+											
  			
 										case 'filtro':
 											
 									
- 												if (isset($_SESSION['producto'])) {
+ 												if (isset($_SESSION['busqueda'])) {
  													# code...
-												$peticion = "SELECT * FROM producto WHERE nombre LIKE '%".$_SESSION['producto']."%' and precio <= ".$precio."" ;
-												unset($_SESSION['producto']);
-										
+												$peticion = "SELECT * FROM producto WHERE nombre LIKE '%".$_SESSION['busqueda']."%' and precio <= ".$precio."" ;
+																						
  												}
 												if (isset($_SESSION['categoria'])) {
 												# code...
 												$peticion = "SELECT * FROM producto WHERE categoria='".$_SESSION['categoria']."' and precio<= ".$precio."" ;
-												unset($_SESSION['categoria']);
-
+												
 											}
 
 											break;

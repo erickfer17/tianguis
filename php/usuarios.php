@@ -3,14 +3,14 @@
 session_start();
 if ($_SESSION['usuario']) {
 	
-}
+
 ?>
 
 
 	<?php
 	include ("head.php");
 	?>
-
+s
 
   <!-- Navbar
     ================================================== -->
@@ -185,7 +185,11 @@ if ($_SESSION['usuario']) {
 </div>
 <!-- Footer
       ================================================== -->
-<?php include('pie.php') ?>
+<?php 
+
+include('pie.php');
+
+} ?>
 
     <!-- Le javascript
     ================================================== -->

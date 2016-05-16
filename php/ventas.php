@@ -168,7 +168,5 @@ if ($_SESSION['usuario']) {
 	</div>
 </div>
 
-		<?php include('pie.php') ?>
+		<?php include('pie.php') ;?>
 
-	</body>
-</html>

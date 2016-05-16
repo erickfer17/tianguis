@@ -50,10 +50,14 @@
 <div style="text-align: center;">
 	<h1>TU COMPRA HA SIDO CONFIRMADA</h1>
 <h4>Te hemos enviado un correo con los datos de la compra</h4>
+<h5>Redirigiendo página principal en 5 segundos</h5>
+
 </div>
 
 
- <?php 
+ <?php
+ $_SESSION['contador']=0;
+ echo	'<meta http-equiv="refresh" content="5; url=/prueba/tianguis/plantilla.php">';
 
  include ("pie.php");
  ?>

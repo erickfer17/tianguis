@@ -1,8 +1,17 @@
 <?php 
 session_start();
 	include( "head.php");
-
- 	
+echo "<div class='category'>
+	
+ 	<div id='car'>
+ 		<div id='carrito'>
+ 		carrito
+ 		</div> 
+ 		<a href='/prueba/tianguis/php/vaciar.php'><button>Vaciar carrito</button></a> 
+ 			<a href='/prueba/tianguis/php/confirmar.php'><button>Confirmar Compra</button></a>
+ 		</div>
+ 		</div>";
+ 	echo "<div class='producto'>";
  	$conexion = mysqli_connect("localhost","Erick","0217","tienda");
 				mysqli_set_charset($conexion, "utf8");
 				$peticion = "SELECT * FROM producto WHERE id=".$_GET['id']." LIMIT 1";
@@ -20,12 +29,12 @@ session_start();
 						echo "<img src='/prueba/tianguis/images/".$filaimg['imagen']."'width=400px>";
 					}
 					echo "<br>";
-					echo "<a href='php/producto.php?id=".$fila['id']."'><button>Detalles</button></a>";
-					echo "<button>Comprar ahora</button>";
+				
+						echo "<button value='".$fila['id']."' class='botoncompra'>Comprar ahora</button>";	
 					echo "</article>";					
 					
 				} 
 				mysqli_close($conexion);
-
+					echo "</div>";
 				include ("pie.php");
 				?>

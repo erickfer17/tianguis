@@ -12,30 +12,40 @@ if(isset($_SESSION['usuario'])){
 
 ?>
 
-
-
-
 <div class="category">
+	
+ 	<div id="car">
+ 		<div id="carrito">
+ 		carrito
+ 		</div> 
+ 		<a href="/prueba/tianguis/php/vaciar.php"><button>Vaciar carrito</button></a> 
+ 			<a href="/prueba/tianguis/php/confirmar.php"><button>Confirmar Compra</button></a>
+ 		</div>
+ 		</div>
+
+
+<div class="category" style="margin-top: 160px">
 
 			<fieldset style="border: solid 2px #00346e; border-radius: 10px">
 				<legend>Categorias</legend>
 				<ul>
 				<br>
-					<li><a href="/prueba/tianguis/php/busqueda.php?search=animales">Animales y Mascotas</a></li>
+					<li><a href="/prueba/tianguis/php/busqueda.php?search=animales&fil=0">Animales y Mascotas</a></li>
+
 					<br>
-					<li><a href="/prueba/tianguis/php/busqueda.php?search=autos">Automoviles</a></li>
+					<li><a href="/prueba/tianguis/php/busqueda.php?search=autos&fil=0">Automoviles</a></li>
 					<br>
-					<li><a href="/prueba/tianguis/php/busqueda.php?search=belleza">Belleza y Joyeria</a></li>
+					<li><a href="/prueba/tianguis/php/busqueda.php?search=belleza&fil=0">Belleza y Joyeria</a></li>
 					<br>
-					<li><a href="/prueba/tianguis/php/busqueda.php?search=hogar">Electrodomesticos y Hogar</a></li>
+					<li><a href="/prueba/tianguis/php/busqueda.php?search=hogar&fil=0">Electrodomesticos y Hogar</a></li>
 					<br>
-					<li><a href="/prueba/tianguis/php/busqueda.php?search=herramientas">Herramientas</a></li>
+					<li><a href="/prueba/tianguis/php/busqueda.php?search=herramientas&fil=0">Herramientas</a></li>
 					<br>
-					<li><a href="/prueba/tianguis/php/busqueda.php?search=juguetes">Juguetes</a></li>
+					<li><a href="/prueba/tianguis/php/busqueda.php?search=juguetes&fil=0">Juguetes</a></li>
 					<br>
-					<li><a href="/prueba/tianguis/php/busqueda.php?search=musica">Musica e Instrumentos</a></li>
+					<li><a href="/prueba/tianguis/php/busqueda.php?search=musica&fil=0">Musica e Instrumentos</a></li>
 					<br>
-					<li><a href="/prueba/tianguis/php/busqueda.php?search=tecnologia">Tecnologia</a></li>
+					<li><a href="/prueba/tianguis/php/busqueda.php?search=tecnologia&fil=0">Tecnologia</a></li>
 					<br>
 				</ul>
 
@@ -48,7 +58,15 @@ if(isset($_SESSION['usuario'])){
 				
 				
 				echo 	"<button class='accordion'> <li><a href='php/usuarios.php'>Usuarios</a></li></button>";
-						
+				echo 	"<button class='accordion'> <li><a href='php/grafica.php'>Relacion Usuarios-Productos</a></li></button>";
+				echo "<button class='accordion'><li><a href='#''>Reportes</a></li></button>
+					<div class='panel'>
+  					<ul>
+  					<li><a href='/prueba/tianguis/admin/pedidos.php'>Pedidos</a></li>
+  					<br>
+  					<li><a href='/prueba/tianguis/php/rventas.php'>Productos</a></li>
+  					</ul>
+					</div>";
 
 				}
 
@@ -58,9 +76,10 @@ if(isset($_SESSION['usuario'])){
 <button class="accordion"><li><a href='#'>Mis Productos</a></li></button>
 <div class="panel">
   <ul>
-  	<li><a href="#">Compras</a></li>
+  	<li><a href="/prueba/tianguis/php/mcompras.php">Compras</a></li>
   	<br>
-  	<li><a href="/prueba/tianguis/php/ventas.php">Ventas</a></li>
+  	<li><a href="/prueba/tianguis/php/ventas.php">Ventas</a></li><br>
+  	<li><a href="/prueba/tianguis/php/subir.php">Vende Algo</a></li>
   </ul>
 </div>
 
@@ -88,7 +107,7 @@ for (i = 0; i < acc.length; i++) {
 
  
 				require("php/conn.php");
-				$peticion = "SELECT * FROM producto";
+				$peticion = "SELECT * FROM producto WHERE existencias > 0";
 				$resultado = mysqli_query($conexion, $peticion);
 				while($fila = mysqli_fetch_array($resultado)) {
 					echo "<article>";

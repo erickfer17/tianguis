@@ -30,7 +30,7 @@
 
 		<div class="buscador">
 	
-		<form name="search" method="post" action="/prueba/tianguis/php/busqueda.php?search=buscar" id="srch">
+		<form name="search" method="post" action="/prueba/tianguis/php/busqueda.php?fil=1&search=buscar" id="srch">
 			<input style="height: 30px; width: 300px" id="buscar" name="busca" type="text" id="busqueda">
 			<input id="imgbuscar" type=image src="/prueba/tianguis/images/buscar.png">
 
@@ -42,13 +42,6 @@
 
 
 
- 	<div id="car">
- 		<div id="carrito" style="background: white; color: black">
- 		carrito
- 		</div> 
- 		<a href="/prueba/tianguis/php/vaciar.php"><button>Vaciar carrito</button></a> 
- 			<a href="/prueba/tianguis/php/confirmar.php"><button>Confirmar Compra</button></a>
- 		</div>
  	 <div class="navbar">
   <div class="navbar-inner">
 	<div class="container">
@@ -63,3 +56,5 @@
 	</div>
   </div><!-- /navbar-inner -->
 </div>
+
+
